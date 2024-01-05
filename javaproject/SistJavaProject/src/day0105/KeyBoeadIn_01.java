@@ -23,7 +23,7 @@ public class KeyBoeadIn_01 {
 		
 		//최종출력
 		
-		System.out.println("=====================");
+		System.out.println("============================");
 		System.out.println("\t[입력결과]");
 		System.out.println("이름:"+name+"님");
 		System.out.println("핸드폰:"+hp);
