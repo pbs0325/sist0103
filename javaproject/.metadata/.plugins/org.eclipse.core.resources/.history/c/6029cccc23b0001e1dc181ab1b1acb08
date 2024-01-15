@@ -1,0 +1,35 @@
+package day0111;
+
+class Artist{
+	
+	//변수명
+	String com;
+	String name;
+	String song;
+	
+	static int im=1;
+	
+	//명시적생성자
+	public void getArtist(String com, String name, String song) {
+		this.com=com;
+		this.name=name;
+		this.song=song;
+	}
+	
+	
+	//출력메서드 한번에 만들기
+	public void setArtist() {
+		im++;
+		System.out.println();
+	}
+	
+}
+
+public class QuizInstance_06 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

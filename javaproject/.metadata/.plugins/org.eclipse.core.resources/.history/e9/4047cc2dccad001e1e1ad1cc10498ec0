@@ -1,0 +1,18 @@
+package day0106;
+
+public class For_07 {
+
+	public static void main(String[] args) {
+		//while문과 for문 비교
+		
+		int i=10;
+		
+		while(i>=0)
+		{
+			System.out.println(i--+" ");
+		}
+		
+		
+	}
+	
+}

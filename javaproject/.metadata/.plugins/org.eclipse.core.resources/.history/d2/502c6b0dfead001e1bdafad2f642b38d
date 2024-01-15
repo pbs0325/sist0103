@@ -1,0 +1,61 @@
+package day0108;
+
+import java.util.Scanner;
+
+public class Quiz_18 {
+
+	public static void main(String[] args) {
+
+		quiz_1();
+		
+	}
+
+
+
+
+
+	public static void quiz_1() {
+		/*Q.반복해서 숫자를 입력하여 양수의 갯수와 음수의 갯수를 구하시오.(0 입력 시 종료)
+		*
+		*
+		*/
+		
+		Scanner sc = new Scanner(System.in);
+	
+		int plus=0;
+		int minus=0;
+		
+		while(true)
+		{
+		System.out.println("음수와 양수를 입력하세요:");
+		int a=sc.nextInt();
+		
+		if(a>0)
+			plus++;
+		
+		if(a<0)
+			minus++;
+		
+		if(a==0)
+			break;
+		
+		}
+		
+		System.out.println("양수의 갯수:"+plus);
+		System.out.println("음수의 갯수:"+minus);
+		
+		
+	}
+
+	public static void quiz_2() {
+
+		//반복해서 점수를 입력하고(1~100) 0을 입력시 빠져나와 갯수와 합계와 평균을 구하시오
+	
+	}
+
+	public static void quiz_3() {
+
+
+	}
+	
+}
