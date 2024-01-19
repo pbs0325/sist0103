@@ -1,0 +1,17 @@
+package 실험실;
+
+import java.awt.Container;
+
+import javax.swing.JFrame;
+
+public class SwingHobby_0119 extends JFrame {
+	
+	Container cp;
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

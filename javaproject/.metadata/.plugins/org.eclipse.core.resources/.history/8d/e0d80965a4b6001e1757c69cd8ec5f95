@@ -1,0 +1,19 @@
+package 실험실;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class A_002 {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("JFrame Example");
+
+        JButton button = new JButton("Click me");
+
+        // JFrame의 컨텐츠 팬에 JButton 추가
+        frame.getContentPane().add(button);
+
+        frame.setSize(300, 200);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+}

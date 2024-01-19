@@ -1,0 +1,32 @@
+package day0119;
+
+import java.awt.Color;
+import java.awt.Container;
+
+import javax.swing.JFrame;
+
+public class Combo_07 extends JFrame {
+
+	Container cp;
+	
+	
+	
+	public Combo_07(String title) 
+	{
+		super(title);
+
+		cp=this.getContentPane();
+
+		this.setBounds(700,200,300,300);
+		cp.setBackground(new Color(255,204,204));
+		initDesign();
+		this.setVisible(true);
+	}
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
