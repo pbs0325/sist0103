@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JTable;
 
-public class A_001 extends JFrame  {
+public class A_001  {
 
 	Container cp;
 	ButtonGroup br;
