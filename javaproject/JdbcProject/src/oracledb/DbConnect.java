@@ -18,7 +18,7 @@ public class DbConnect {
 		Connection conn=null;
 
 		try {
-			conn=DriverManager.getConnection(ORACLE_DB, "lab", "a1234");
+			conn=DriverManager.getConnection(ORACLE_DB, "bumsu", "a1234");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println("로컬 오라클 연결실패!");
