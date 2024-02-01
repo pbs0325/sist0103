@@ -1,4 +1,4 @@
-package javaproject;
+package javaproject2;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,14 +6,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
 
+import javaproject2.Dto;
 import oracledb.DbConnect;
 
-public class JavaDbModel {
+public class DataBase {
 	
-	DbConnect db = new DbConnect();
 	
-	//사원추가
-	public void insertSawon(JavaDto dto) {
+/////////////////////////클래스 호출
+	DbConnect db= new DbConnect();	
+
+	
+/////////////////////////테이블에 dto 데이터 insert
+	public void insertSawon(Dto dto) {
 		Connection conn=db.getoracle();
 		PreparedStatement pstmt=null;
 		
@@ -41,26 +45,27 @@ public class JavaDbModel {
 			db.dbClose(pstmt, conn); 
 		}
 	}
-
-	//사원목록
-	public Vector<JavaDto> getAllSaw() 
+	
+	
+/////////////////////////dto에서 데이터 select
+	public Vector<Dto> getAllSawon() 
 	{
-		Vector<JavaDto> list=new Vector<JavaDto>();
-		
+		Vector<Dto> list=new Vector<Dto>();
+
 		Connection conn = db.getoracle();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		
+
 		String sql="select * from employee order by num";
-		
+
 		try {
 			pstmt=conn.prepareStatement(sql);
 			rs=pstmt.executeQuery();
-			
+
 			while(rs.next())
 			{
-				JavaDto dto=new JavaDto();
-				
+				Dto dto=new Dto();
+
 				dto.setName(rs.getString("num"));
 				dto.setPhoto(rs.getString("photo"));
 				dto.setGender(rs.getString("gender"));
@@ -70,21 +75,21 @@ public class JavaDbModel {
 				dto.setPay(rs.getInt("Pay"));
 				dto.setEmail(rs.getString("email"));
 				dto.setIpsaday(rs.getString("ipsaday"));
-				
+
 				list.add(dto);
 			}
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			db.dbClose(rs, pstmt, conn);
 		}
-		
+
 		return list;
 	}
 	
-	//사원삭제
+/////////////////////////사원 데이터 삭제
 	public void deleteSawon(String num) {
 		Connection conn=db.getoracle();
 		PreparedStatement pstmt = null;
@@ -98,19 +103,14 @@ public class JavaDbModel {
 			
 			pstmt.execute();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
 			db.dbClose(pstmt, conn);
 		}
 
 	}
-	
-	//사원수정
-	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 	}
-
 }
