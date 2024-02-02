@@ -142,6 +142,7 @@ public class SwingJdbcScore extends JFrame implements ActionListener{
 			if(a==0)
 				JOptionPane.showMessageDialog(this, "없는 데이터 번호입니다");
 			else
+				//삭제 확인용
 				tableWrite();
 
 		} catch (SQLException e) {

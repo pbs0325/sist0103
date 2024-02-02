@@ -17,9 +17,11 @@ public class Add extends JFrame implements ActionListener {
 	tfPay, tfEmail,tfIpsaday;
 	JButton btnImage, btnInsert, btnCancel;
 	String imageName;
-	DataBase db;
+	DataBase db = new DataBase();
+	Dto dto=new Dto();
 	
-/////////////////////////////////사원추가 jframe 생성
+	
+//////////////////////////////////사원추가 jframe 생성
 	public Add() {
 		super("사원추가");
 		this.setBounds(300, 100, 400, 520);
@@ -28,7 +30,7 @@ public class Add extends JFrame implements ActionListener {
 	}	
 	
 	
-/////////////////////////////////사원추가 버튼생성 & 디자인 생성
+//////////////////////////////////사원추가 버튼생성 & 디자인 생성
 	private void initDesign() {
 		this.setLayout(null);
 
@@ -127,6 +129,8 @@ Object ob=e.getSource();
 		/////사진선택 버튼 action
 		if(ob==btnImage)
 		{
+			
+			
 			FileDialog dlg=new FileDialog(this, "이미지 가져오기", FileDialog.LOAD);
 			dlg.setVisible(true);
 			
@@ -142,7 +146,7 @@ Object ob=e.getSource();
 			//shopDto 생성
 			Dto dto=new Dto();
 			
-			//dto에 4개의 데이터를 넣는다
+		/////dto에 4개의 데이터를 넣는다
 			dto.setName(tfName.getText());
 			dto.setPhoto(imageName);
 			dto.setGender(tfGender.getText());
@@ -153,10 +157,10 @@ Object ob=e.getSource();
 			dto.setEmail(tfEmail.getText());
 			dto.setIpsaday(tfIpsaday.getText());
 		
-			//db모델에서 insert메서드 호출
+		/////db모델에서 insert메서드 호출
 			db.insertSawon(dto);
 			
-			//현재창 닫기
+		/////현재창 닫기
 			this.setVisible(false);
 		}
 		/////cancel 버튼 action
