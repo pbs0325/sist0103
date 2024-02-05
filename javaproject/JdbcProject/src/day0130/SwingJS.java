@@ -23,7 +23,7 @@ public class SwingJS extends JFrame implements ActionListener {
 	//생성자
 	public SwingJS(String title)
 	{
-		super
+		
 	}
 	
 	@Override
