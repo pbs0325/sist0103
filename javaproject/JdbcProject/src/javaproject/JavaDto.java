@@ -5,8 +5,7 @@ import java.sql.Date;
 public class JavaDto {
 	
 	private int pay,num;
-	private String name,dept,photo,gender,addr,email,position;
-	private Date Gaipday;
+	private String name,dept,photo,gender,addr,email,position,ipsaday;
 	
 	public int getPay() {
 		return pay;
@@ -62,11 +61,11 @@ public class JavaDto {
 	public void setPosition(String position) {
 		this.position = position;
 	}
-	public Date getGaipday() {
-		return Gaipday;
+	public String getIpsaday() {
+		return ipsaday;
 	}
-	public void setGaipday(Date gaipday) {
-		Gaipday = gaipday;
+	public void setIpsaday(String ipsaday) {
+		this.ipsaday = ipsaday;
 	}
 	
 
