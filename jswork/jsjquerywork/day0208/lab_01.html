@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Onload Example</title>
+</head>
+<body>
+    <h1>Hello, World!</h1>
+    
+    <script>
+        // 페이지가 로드된 후에 실행될 함수
+        function init() {
+            alert('페이지가 완전히 로드되었습니다!');
+            // 여기에 추가적인 초기화 작업을 수행할 수 있습니다.
+        }
+        
+        // window.onload 이벤트에 init 함수를 할당
+        window.onload = init;
+    </script>
+</body>
+</html>
