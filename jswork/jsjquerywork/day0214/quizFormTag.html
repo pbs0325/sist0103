@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 500px;
+            border: 3px solid gray;
+        }
+
+        th,
+        td {
+            border: 1px solid gray;
+        }
+
+        #result {
+            font-family: 'inter';
+            width: 450px;
+            height: 200px;
+            border: 2px solid gray;
+            margin-top: 30px;
+            padding: 20px 20px;
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+
+            document.getElementById("btnResult").onclick = function () {
+
+                var s = "";
+                s = "이름: " + document.getElementById("name").value + "<br>";
+
+                s += "비밀번호: " + document.getElementById("pw").value + "<br>";
+
+                
+                var a="";
+                
+                for (var i = 0; i < frm.blood.length; i++) {
+                    if (frm.blood[i].checked) {
+                        a += "혈액형: 나의 혈액형은 "+frm.blood[i].value + "입니다<br>";
+                    }
+                }
+                
+                s+=a;
+                
+                var b="코딩: 제가 ";
+                var flag = false;
+                
+                for (var i = 0; i < frm.lang.length; i++) {
+                    
+                    if (frm.lang[i].checked) {
+                        flag = true;
+                        b += frm.lang[i].value + ", ";
+                    }
+                }
+                
+                if(!flag)
+                {
+                    b+="할 줄 아는 코딩언어가 없어요 ㅜ"
+                }else{
+                    b+="를 할 수 있습니다."
+                }
+                
+                s+=b;
+                
+                s+="<br>입사날짜: "+frm.aa.value;
+                
+                
+                result.innerHTML=s;
+
+                
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form action="#" name="frm">
+        <table>
+            <caption><b>Form Tag Task</b></caption>
+            <tr>
+                <th>이름</th>
+                <td>
+                    <input type="text" id="name" size="10" placeholder="name please">
+                </td>
+            </tr>
+            <tr>
+                <th>비밀번호</th>
+                <td>
+                    <input type="password" id="pw" size="12" placeholder="password please">
+                </td>
+            </tr>
+            <tr>
+                <th>혈액형</th>
+                <td>
+                    <input type="radio" id="blood" value="A">A
+                    <input type="radio" id="blood" value="B">B
+                    <input type="radio" id="blood" value="O">O
+                    <input type="radio" id="blood" value="AB">AB
+                </td>
+            </tr>
+            <tr>
+                <th>코딩</th>
+                <td>
+                    <input type="checkbox" id="lang" value="C++">C++
+                    <input type="checkbox" id="lang" value="JAVA">JAVA
+                    <input type="checkbox" id="lang" value="Jquery">Jquery
+                    <input type="checkbox" id="lang" value="Spring">Spring
+                </td>
+            </tr>
+            <tr>
+                <th>입사일</th>
+                <td>
+                    <input type="date" value="2022-01-01" id="ipsa" name="aa">
+
+                </td>
+            </tr>
+            <tr>
+                <td align="center" colspan="2">
+                    <input type="button" value="결과출력" id="btnResult">
+
+                </td>
+            </tr>
+        </table>
+        <div id="result">출력....</div>
+    </form>
+</body>
+
+</html>
