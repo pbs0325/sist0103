@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        #result{
+            width: 500px; height: 200px;
+            line-height: 200px;
+            text-align: center;
+            font-family: 'inter';
+            font-size: 25px;
+            margin-top: 20px;
+            border: 2px solid gray;
+            background: url(../image/flower_ani/f11.png) no-repeat right bottom;
+            background-size: 50px 60px;
+        }
+
+        #imgceleb{
+            border: 5px groove turquoise;
+            margin: 30px 100px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            //버튼 1 이벤트
+            document.getElementById("btn1").onclick=function()
+            {
+                var name=prompt("니 이름 뭐고?");
+
+                if(name==null)
+                    document.getElementById("result").innerHTML="<u>말 안하나!</u>";
+                else
+                document.getElementById("result").innerHTML="<u>니 이름이 "+name+"란 말이제?";
+            }
+
+            //버튼 2 이벤트
+            //버튼 2 누르면 prompt창이 나오고 10이라고 쓰면 10번 사진이 나온다
+            //취소 클릭하면 경고창에 "난 이 사진이 좋아" 라고한후 함수 종료
+            //음수나 21번 이후숫자 누르면 "사진이 없다 아이가" 라고한후 함수 종료
+            //숫자에 맞는 사진이 나옵니다
+            document.getElementById("btn2").onclick=function()
+            {
+                var name=prompt("어떤 사진?");
+
+
+                var photo=document.getElementById("imgceleb")
+                photo.setAttribute("src","../image/flower_ani/f"+name+".png")
+
+                if(name<0||name>20)
+                    document.getElementById("result").innerHTML="그 사진은 없다 아이가"
+                else
+                document.getElementById("result").innerHTML="난 이 사진이 좋다";
+            }
+
+            //3번 버튼 입력시 prompt창 나오고 이미지의 너비 입력하면 입력한 너비로 크기 변경
+            //(취소 누르면 '이미지 너비변경 취소' 라는 경고창 띄우기)
+            document.getElementById("btn3").onclick=function()
+            {
+                var large=prompt("바꿀 이미지 너비 입력하세요")
+
+                var photo=document.getElementById("imgceleb")
+                
+                if(large==null)
+                    alert("이미지 변경 취소")
+                else
+                    parseInt(photo.setAttribute("width",large));
+                
+            }
+
+            document.getElementById("btn4").onclick=function()
+            {
+                imgceleb.setAttribute("src","../image/Food/1.jpg");
+            }
+            
+            document.getElementById("btn5").onclick=function()
+            {
+                var photo=document.getElementById("imgceleb")
+                photo.setAttribute("src","../image/Food/2.jpg");
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <button type="button" class="btn btn-outline-info" id="btn1">이벤트 연습_1</button>
+    <button type="button" class="btn btn-outline-success" id="btn2">이벤트 연습_2</button>
+    <button type="button" class="btn btn-outline-warning" id="btn3">이벤트 연습_3</button><br><br>
+    <button type="button" class="btn btn-outline-success" id="btn4">샌드위치</button>
+    <button type="button" class="btn btn-outline-warning" id="btn5">꼬치구이</button>
+
+
+    <div id="result">테스트</div>
+    <img src="../image/flower_ani/f1.png" width="250" id="imgceleb">
+</body>
+</html>
