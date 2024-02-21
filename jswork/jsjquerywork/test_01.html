@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 모달 스타일링 */
+        .modal {
+            display: none;
+            /* 모달을 기본적으로 숨김 */
+            position: fixed;
+            /* 모달을 화면에 고정 */
+            z-index: 1;
+            /* 모달을 다른 요소 위에 표시 */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* 모달을 화면 전체에 표시 */
+            height: 100%;
+            overflow: auto;
+            /* 모달이 너무 커서 스크롤 가능하도록 함 */
+            background-color: rgba(0, 0, 0, 0.5);
+            /* 배경에 반투명한 검정색 */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            /* 모달을 화면 중앙에 위치시킴 */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 모달을 나타내기 위한 HTML 요소 -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+
+            <span class="close">&times;</span>
+            <p>Hello, I am a modal!</p>
+        </div>
+    </div>
+    <button onclick="showModal()">Open Modal</button>
+    <script>
+        // 모달을 나타내는 함수
+        function showModal() {
+            document.getElementById('myModal').style.display = 'block';
+        }
+
+        // 모달을 감추는 함수
+        function hideModal() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+
+        // 모달 닫기 버튼을 클릭할 때 모달을 감추도록 이벤트 핸들러 설정
+        document.getElementsByClassName('close')[0].onclick = function () {
+            hideModal();
+        }
+
+        // 모달 바깥 영역을 클릭할 때 모달을 감추도록 이벤트 핸들러 설정
+        window.onclick = function (event) {
+            if (event.target == document.getElementById('myModal')) {
+                hideModal();
+            }
+        }
+    </script>
+</body>
+
+</html>

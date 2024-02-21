@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var sphoyo=document.querySelectorAll(".sphoto");
+
+        for(var i=0;i<sphoto.length;i++)
+        {
+            //현재이벤트 사진얻기
+            sphoto[i].onmouseover=function(){
+
+                var selimg=this.getAttribute("src");
+
+                //위의 사진경로를 id가 large_photo인 이미지에 적용
+                document.getElementById("large_photo").setAttribute("src")
+            }
+        }
+    </script>
+</body>
+</html>
