@@ -10,13 +10,19 @@
             var list='';
 
             list+='<ul>';
-            list+='<li>Java<li>';
+            list+='<li>Java</li>';
             list+='<li>JavaScript</li>';
             list+='</ul>';
+
+           // document.write(list);
+           //document.body.innerHTML=list; //html문서의 body태그에 넣겠다
+           //document.getElementById("out").innerHTML=list;
+
+           out.innerHTML=list;
         }
     </script>
 </head>
 <body>
-    <div id="out"> 결과출력</div>
+    <div id="out">결과출력</div>
 </body>
 </html>

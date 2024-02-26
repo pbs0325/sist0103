@@ -9,12 +9,13 @@
     background-color: green;
     color: white;
 }
+
 .btn-pink{
     background-color: pink;
     color: black;
 }
 
-.btn-red{
-    background-color: crimson;
-    color: gold;
+.btn-black{
+    background-color: black;
+    color: white;
 }

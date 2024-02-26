@@ -7,56 +7,63 @@
     <script>
         window.onload=function(){
 
-            var selImage=document.getElementById("selImage");
-            var photo=document.getElementById("photo");
+           var selImage= document.getElementById("selImage");
+           var photo= document.getElementById("photo");
+
 
             var init_image=selImage.value;
             //현재사진의 src속성을 변경해본다
             photo.setAttribute("src",init_image);
 
-            //셀렉트 박스 변경시 해당이미지로
-            selImage.onchange=function(){
 
-                //모든 이벤트 함수에 이벤트 발생객체에 대한 this라는 변수가 기본으로 존재
-                console.log(this.value);
+           //셀렉트 박스변경시 해당이미지로
+           selImage.onchange=function(){
 
-                //photo의 src에 this.value를 적용
-                photo.setAttribute("src",this.value);
-            }
+            //모든 이벤트 함수에 이벤트 발생객체에 대한 this라는 변수가 기본으로 존재
+              console.log(this.value);
 
-            //작게 이벤트
-            document.getElementById("btnsmall").onclick=function()
-            {
-                var w=photo.getAttribute("width");
-                w-=10;
-                photo.setAttribute("width",w);
-            }
+              //photo의 src에 this.value를 적용
+              photo.setAttribute("src",this.value);
+           }
 
-            //크게 이벤트
+
+           //점점작게 이벤트
+           document.getElementById("btnsmall").onclick=function()
+           {
+               //photo의 현재 width값얻기
+               var w=photo.getAttribute("width");
+               w-=10;
+               photo.setAttribute("width",w);
+           }
+
+            //점점크게 이벤트
             document.getElementById("btnlarge").onclick=function()
-            {
-                var w=parseInt(photo.getAttribute("width"));
-                w+=10;
-                photo.setAttribute("width",w);
-            }
+           {
+               //photo의 현재 width값얻기
+               var w=parseInt(photo.getAttribute("width"));
+               w+=10;
+               photo.setAttribute("width",w);
+           }
+
+
         }
     </script>
 </head>
 <body>
     <div>
-        <button type="button" id="btnsmall">작게 만들고 싶나?</button>
-        <button type="button" id="btnlarge">크게 만들고 싶나?</button>
+        <button type="button" id="btnsmall">점점작게</button>
+        <button type="button" id="btnlarge">점점크게</button>
         <b style="margin-left: 20px;">사진선택:</b>
-        <select name="" id="selImage">
-            <option value="../image/html/bg07.gif">황소자리</option>
-            <option value="../image/html/bg14.gif">물병자리</option>
-            <option value="../image/html/1.png" >쌍둥이자리</option>
-            <option value="../image/html/2.png" >사자자리</option>
+        <select id="selImage">
+            <option value="../image/logoImg/shoe01.png">구두 1</option>
+            <option value="../image/logoImg/shoe02.png" selected>구두 2</option>
+            <option value="../image/logoImg/shoe03.png">구두 3</option>
+            <option value="../image/logoImg/shoe04.png" >구두 4</option>
         </select>
     </div>
 
     <div>
-        <img src="../image/html/3.png" alt="" id="photo" width="300 ">
+        <img src="../image/logoImg/shoe01.png" id="photo" width="300">
     </div>
 </body>
 </html>

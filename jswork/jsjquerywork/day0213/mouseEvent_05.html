@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        img{width:150;}
+        img{width: 150px;}
     </style>
     <script>
         function test()
         {
-            alert("경고창은\n<br>태그가 안먹힙니다")
+            alert("경고창은\n<br>태그가 안먹힙니다");
         }
+
         function test2()
         {
-            var str="<font color='red'>HTML요소에 출력합니다</font>";
+            var str="<font color='red' size='5'>HTML요소에 출력합니다</font>";
             out.innerHTML=str;
         }
     </script>
@@ -26,7 +27,7 @@
     <input type="button" value="html요소에 출력하기" onclick="test2()">
     <br>
     <hr>
-    <img src="../image/Food/11.jpg" alt="" onmouseover="this.src='../image/Food/2.jpg'"
-    onmouseout="this.src='../image/Food/11.jpg'">
+    <img src="../image/Food/1.jpg" onmouseover="src='../image/Food/2.jpg'"
+    onmouseout="src='../image/Food/1.jpg'">
 </body>
 </html>
