@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Dongle&family=Gaegu&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<title>Insert title here</title>
+<style type="text/css">
+img.select {
+	border: 2px solid red;
+}
+</style>
+<script type="text/javascript">
+	$(function() {
+
+		// 추가폼 숨김
+		$(".writeform").hide();
+
+		// 버튼 클릭 시 추가폼 토글
+		$("#btnselect").click(function() {
+			$(".writeform").slideToggle();
+		});
+
+		$("img.mouse").eq(0).addClass("select");
+
+		$("#mouse").val($("img.mouse").eq(0).attr("src"));
+
+		$("img.mouse").click(function() {
+			$(this).siblings().removeClass("select");
+			$(this).addClass("select");
+			$("#mouse").val($(this).attr("src"));
+		});
+
+		$("#btnbuy").click(function() {
+
+			/*var writer=$('#writer').val();
+			var kind=$('#mouse').val();
+			var color=$('#color').val();
+			var price=$('#price').val();
+			var gender=$('#gender').val();*/
+
+			var data = $("#buyform").serialize();
+
+			alert(data);
+
+			//console.log(writer, kind, color, price, gender);
+
+			$.ajax({
+				type : "post",
+				dataType : "html",
+				url : "insertBoard.jsp",
+				data : data,
+				success : function() {
+
+					//alert("성공!");
+					$('input[name="price"]').prop('checked', false);
+					$('input[name="color"]').prop('checked', false);
+					$('input[name="gender"]').prop('checked', false);
+
+					$("#writer").val("");
+
+					$("img.mouse").removeClass("select");
+					$("img.mouse").eq(0).addClass("select");
+					$("#mouse").val($("img.mouse").eq(0).attr("src"));
+
+				}
+
+			})
+
+		});
+
+	})
+</script>
+</head>
+
+<body>
+	<div class="select">
+		<button type="button" class="btn btn-info" id="btnselect">고르기</button>
+	</div>
+
+	<div class="hello buyform" style="width: 1000px;">
+		<form id="buyform">
+			<table class="table table-bordered">
+			
+				<caption align="top" style="text-align: center; font-size: 24px">
+					<b>쥐선택</b>
+				</caption>
+				
+				<tr>
+					<th width="150">마리당 가격</th>
+					<td><input type="radio" class="form-check-input" name="price"
+						value="3000" id="price">3000원 <input type="radio"
+						class="form-check-input" name="price" value="4000"> 4000원
+						<input type="radio" class="form-check-input" name="price"
+						value="5000"> 5000원 <input type="radio"
+						class="form-check-input" name="price" value="1500"> 1500원</td>
+				</tr>
+
+				<tr>
+					<th>쥐 색깔</th>
+					<td><input type="radio" class="form-check-input" name="color"
+						value="노란색" id="color"> 노란색 <input type="radio"
+						class="form-check-input" name="color" value="검은색"> 검은색 <input
+						type="radio" class="form-check-input" name="color" value="흰색">
+						흰색 <input type="radio" class="form-check-input" name="color"
+						value="얼룩"> 얼룩</td>
+				</tr>
+
+				<tr>
+					<th>쥐 종류</th>
+					<td height="250px"><input type="hidden" name="mouse"
+						id="mouse"> <script type="text/javascript">
+							var s = "";
+							for (var i = 1; i <= 3; i++) {
+								s += "<img src='../image/mouse/" + i + ".jpg' width='250' class='mouse' >";
+							}
+
+							document.write(s);
+						</script></td>
+				</tr>
+
+				<tr>
+					<th>성별</th>
+					<td id="gender">
+					<input type="radio" class="form-check-input"name="gender" value="암컷"> 암컷
+					 <input type="radio"class="form-check-input" name="gender" value="수컷"> 수컷
+					 </td>
+				</tr>
+
+				<tr>
+					<th>배송시 요구사항</th>
+					<td><textarea style="width: 300px; height: 100px;"
+							class="form-control" name="writer" id="writer"></textarea></td>
+				</tr>
+
+				<tr>
+					<td colspan="2" align="center">
+						<button type="button" class="btn btn-info" id="btnbuy">구매하기</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+</body>
+
+</html>
