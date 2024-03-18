@@ -1,15 +1,18 @@
-package ajaxboard;
+package simpleboard.model;
 
 import java.sql.Timestamp;
 
-public class AjaxBoardDto {
+public class SimpleBoardDto {
 
 	private String num;
 	private String writer;
+	private String pass;
 	private String subject;
 	private String content;
-	private String avata;
+	private int readcount;
+	private int answercount; //댓글개수저장
 	private Timestamp writeday;
+	
 	
 	public String getNum() {
 		return num;
@@ -23,6 +26,12 @@ public class AjaxBoardDto {
 	public void setWriter(String writer) {
 		this.writer = writer;
 	}
+	public String getPass() {
+		return pass;
+	}
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
 	public String getSubject() {
 		return subject;
 	}
@@ -35,17 +44,23 @@ public class AjaxBoardDto {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getAvata() {
-		return avata;
+	public int getReadcount() {
+		return readcount;
 	}
-	public void setAvata(String avata) {
-		this.avata = avata;
+	public void setReadcount(int readcount) {
+		this.readcount = readcount;
 	}
 	public Timestamp getWriteday() {
 		return writeday;
 	}
 	public void setWriteday(Timestamp writeday) {
 		this.writeday = writeday;
+	}
+	public int getAnswercount() {
+		return answercount;
+	}
+	public void setAnswercount(int answercount) {
+		this.answercount = answercount;
 	}
 	
 	

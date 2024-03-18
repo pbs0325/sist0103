@@ -1,15 +1,18 @@
-package ajaxboard;
+package uploadboard.data;
 
 import java.sql.Timestamp;
 
-public class AjaxBoardDto {
+public class UploadBoardDto {
 
 	private String num;
 	private String writer;
 	private String subject;
 	private String content;
-	private String avata;
+	private String imgname;
+	private String pass;
+	private int readcount;
 	private Timestamp writeday;
+	
 	
 	public String getNum() {
 		return num;
@@ -35,11 +38,23 @@ public class AjaxBoardDto {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getAvata() {
-		return avata;
+	public String getImgname() {
+		return imgname;
 	}
-	public void setAvata(String avata) {
-		this.avata = avata;
+	public void setImgname(String imgname) {
+		this.imgname = imgname;
+	}
+	public String getPass() {
+		return pass;
+	}
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
+	public int getReadcount() {
+		return readcount;
+	}
+	public void setReadcount(int readcount) {
+		this.readcount = readcount;
 	}
 	public Timestamp getWriteday() {
 		return writeday;
@@ -47,6 +62,7 @@ public class AjaxBoardDto {
 	public void setWriteday(Timestamp writeday) {
 		this.writeday = writeday;
 	}
+	
 	
 	
 }
