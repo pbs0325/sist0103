@@ -77,7 +77,7 @@ public class MemgaipDao {
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
 		
-		String sql="select * from simpleboard order by num desc";
+		String sql="select * from memgaip order by m_num desc";
 		
 		try {
 			pstmt=conn.prepareStatement(sql);
@@ -105,5 +105,31 @@ public class MemgaipDao {
 		
 		return list;
 	}
+	
+	public boolean deleteMemgaip(String num, String pass)
+	{
+		Connection conn=db.getConnection();
+		PreparedStatement pstmt=null;
+		boolean success = false;
+		
+		String sql="delete from memgaip where m_num=? and m_pass=?";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			
+			pstmt.setString(1,num);
+			pstmt.setString(2,pass);
+			
+			 int rowsAffected = pstmt.executeUpdate();
+		        success = rowsAffected > 0; // At least one row was affected
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			db.dbClose(pstmt, conn);
+		}
+		return success;
+	}
+	
 	
 }
