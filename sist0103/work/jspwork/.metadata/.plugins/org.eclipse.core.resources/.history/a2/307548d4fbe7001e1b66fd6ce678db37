@@ -1,0 +1,12 @@
+package data.dto;
+
+public class GuestDto {
+
+	
+		private String num;
+		private String myid;
+		private String content;
+		private String photoname;
+		private int chu;
+		private Timestamp writeday;
+}
