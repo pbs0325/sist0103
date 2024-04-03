@@ -1,0 +1,42 @@
+package day0111;
+
+class Manggo{
+	
+	private String writter;
+	private String subject;
+	private static String mes="Happy Day!!";
+	
+	//setter,getter
+	public String getWritter() {
+		return writter;
+	}
+	public void setWritter(String writter) {
+		this.writter = writter;
+	}
+	public String getSubject() {
+		return subject;
+	}
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+	public static String getMes() {
+		return mes;
+	}
+	public static void setMes(String mes) {
+		Manggo.mes = mes;
+	}
+}
+
+public class ObTest_09 {
+
+	public static void writeManggo(Manggo m) 
+	{
+		System.out.println("작성자:"+m.getWritter());
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

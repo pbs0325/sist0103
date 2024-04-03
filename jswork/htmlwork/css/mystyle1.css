@@ -1,0 +1,21 @@
+#box{
+    background-color: darkred;
+    width: 800px;
+    height: 500px;
+    margin: auto;
+    color: white;
+}
+
+#box h1{
+    text-align: center;
+    padding-top: 50px;
+}
+
+#box p{
+    text-align: center;
+}
+
+#box ul{
+    padding: 100px;
+    list-style: none;
+}
