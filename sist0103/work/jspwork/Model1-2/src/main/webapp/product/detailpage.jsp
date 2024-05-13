@@ -23,7 +23,7 @@
 	
 }
 
-.imgsub {
+.imgdiv .imgsub {
 	margin-top: 24px;
 	width: 124px;
 	height: 124px; 
@@ -33,14 +33,28 @@
 	background: #D9D9D9;
 }
 
-.imgmain{
+.imgdiv .imgmain{
 	width: 577px;
 	height: 577px;
 }
-</style>
 
-left: 363px;
-	top: 120px;
+.btndiv{
+position: absolute;
+left: 1020px; 
+top: 613px; 
+
+
+}
+
+.btndiv .heart, .btndiv .cart, .btndiv .buynow{
+position: relative;
+box-sizing: border-box; 
+width: 84px; 
+height: 84px; 
+border: 1px solid #000000;
+margin-right: 24px;
+}
+</style>
 </head>
 <%
 
@@ -51,23 +65,21 @@ left: 363px;
 		<div class="imgdiv">
 			<img class="imgmain" alt="" src="/Model1-2/image/sofa/greensofa1.jpg">
 
-			<img class="imgsub" alt="" src="/Model1-2/image/sofa/greensofa2.jpg">
+			<img class="imgsub" alt="" src="/Model1-2/image/sofa/greensofa2.jpg" onclick="" >
 			<img class="imgsub" alt="" src="/Model1-2/image/sofa/greensofa3.jpg">
 			<img class="imgsub" alt="" src="/Model1-2/image/sofa/greensofa4.jpg">
 		</div>
 
-		<div>
-			<button name="heart"
-				style="box-sizing: border-box; position: absolute; width: 84px; height: 84px; left: 1020px; top: 613px; border: 1px solid #000000;">
+		<div class="btndiv">
+			<button name="heart" class="heart">
 			</button>
-
-			<button name="cart"
-				style="box-sizing: border-box; position: absolute; width: 84px; height: 84px; left: 1128px; top: 613px; border: 1px solid #000000;">
+			<button name="cart" class="cart">
+				<!--style="box-sizing: border-box; position: absolute; width: 84px; height: 84px; left: 1128px; top: 613px; border: 1px solid #000000;" -->	
 			</button>
-
-			<button name="buynow"
-				style="position: absolute; width: 361px; height: 84px; left: 1236px; top: 613px; background: #D9D9D9; font-family: 'Inter'; font-style: normal; font-weight: 400; font-size: 16px; line-height: 19px; color: #000000;">
-				BUY NOW</button>
+			<button name="buynow" class="buynow">
+				<!-- style="position: absolute; width: 361px; height: 84px; left: 1236px; top: 613px; background: #D9D9D9; font-family: 'Inter'; font-style: normal; font-weight: 400; font-size: 16px; line-height: 19px; color: #000000;" -->
+			BUY NOW
+			</button>
 		</div>
 	</form>
 
