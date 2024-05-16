@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tb2{
+            width: 400px;
+            border: 1px solid gray;
+            border-collapse: collapse;
+        }
+
+        .tb2 td, .tb2 th{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table border="1" style="width: 300px;">
+        <caption>[표1]</caption>
+        <tr height="50">
+            <td align="center">one</td>
+            <td align="center">two</td>
+            <td align="center">three</td>
+        </tr>
+
+        <tr align="center" height="50">
+            <td colspan="3">3칸 합침</td>
+        </tr>
+    </table>
+    <hr>
+    <table class="tb2">
+        <caption><b>[표2]</b></caption>
+        <tr height="40">
+            <th>사진</th>
+            <th>이름</th>
+            <th>주소</th>
+            <th>HP</th>
+        </tr>
+        <tr>
+            <td rowspan="3" align="center">
+                <img src="../image/bg07.gif" alt="사진자리" width="200">
+            </td>
+            <td>범수자리</td>
+            <td>우주</td>
+            <td>^&$!&#^$^</td>
+        </tr>
+        <tr>
+            <td>박범수</td><td>서울</td><td>010-5738-2832</td>
+        </tr>
+        <tr>
+            <td>박범수</td><td>서울</td><td>010-5738-2832</td>
+        </tr>
+    </table>
+
+    <table border="1px" style="width: 400;">
+        <caption>[표3]</caption> 
+        <tr>
+            <td colspan="1" rowspan="3" align="center" >
+                asdf
+            </td>
+            <td colspan="2" align="center" >
+               asdf
+            </td>   
+        </tr>
+        <tr>
+            <td colspan="2">asdf</td>
+        </tr>
+        <tr>
+            <td>asdf</td><td rowspan="2">asdf</td>
+        </tr>
+        <tr>
+            <td colspan="2">asdf</td>
+        </tr>
+    </table>
+
+    <table border="3px" style="width: 300;">
+        <caption>[표4]</caption>
+        <tr>
+            <td rowspan="3">박범수</td>
+            <td rowspan="3"><img src="../image/bg07.gif" alt="" width="150"></td>
+            <td > 123123123 </td> 
+        </tr>
+        <tr>
+            <td > 123123123 </td> 
+        </tr>
+        <tr>
+            <td> 123123123 </td> 
+        </tr>
+        
+    </table>
+</body>
+</html>

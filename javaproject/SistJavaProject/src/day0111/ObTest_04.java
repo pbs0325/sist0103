@@ -1,0 +1,57 @@
+package day0111;
+
+class MyCar{
+	
+	private String carName;
+	private String carColor;
+	private int carPrice;
+	
+	
+	public String getCarName() {
+		return carName;
+	}
+	public void setCarName(String carName) {
+		this.carName = carName;
+	}
+	public String getCarColor() {
+		return carColor;
+	}
+	public void setCarColor(String carColor) {
+		this.carColor = carColor;
+	}
+	public int getCarPrice() {
+		return carPrice;
+	}
+	public void setCarPrice(int carPrice) {
+		this.carPrice = carPrice;
+	}
+	
+	public void getCarInfo()
+	{
+		System.out.println("자동차명:"+this.carName);
+		System.out.println("자동차가격:"+this.carPrice);
+		System.out.println("자동차색:"+this.carColor);
+	}
+}
+
+public class ObTest_04 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		MyCar car=new MyCar();
+		car.setCarName("벤츠");
+		car.setCarPrice(100000000);
+		car.setCarColor("gray");
+		
+		System.out.println("[나의 자동차 정보]");
+		car.getCarInfo();
+		
+		System.out.println("[나의 새차 정보]");
+		car.setCarName("페라리");
+		car.setCarPrice(1000000000);
+		car.setCarColor("red");
+		car.getCarInfo();
+	}
+
+}
