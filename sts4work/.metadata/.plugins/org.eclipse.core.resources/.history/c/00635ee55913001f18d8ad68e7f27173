@@ -1,0 +1,5 @@
+package myshop.data;
+
+public interface MyShopDaoInter extends JpaRepository {
+
+}

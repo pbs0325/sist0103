@@ -1,0 +1,21 @@
+package myshop.data;
+
+import java.sql.Timestamp;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+@Data
+@Entity
+@Table
+public class MyShopDto {
+	
+	private long num;
+	private String sangname;
+	private String sangprice;
+	private String sangcolor;
+	private String sangipgo;
+	private Timestamp writeday;
+	
+}

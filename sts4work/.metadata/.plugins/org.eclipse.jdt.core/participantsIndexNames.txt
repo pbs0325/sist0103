@@ -1,0 +1,7 @@
+INDEX VERSION 1.134
+C:\sist0103\work\sts4work\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\605273395.index
+\SpringBootEx2\src\main\java
+C:\sist0103\work\sts4work\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3301665006.index
+\SpringBootEx2\src\main\java
+C:\sist0103\work\sts4work\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2951614358.index
+\SpringBootEx2\src\main\java

@@ -1,0 +1,16 @@
+package myshop.data;
+
+import jakarta.persistence.Entity;
+
+public class MyShopDto {
+
+	@Entity
+	
+	private long num;
+	private String sangname;
+	private String sangprice;
+	private String sangcolor;
+	private String sangipgo;
+	private Timestamp writeday;
+	
+}

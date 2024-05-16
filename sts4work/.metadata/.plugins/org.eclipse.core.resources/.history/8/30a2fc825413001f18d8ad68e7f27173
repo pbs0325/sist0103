@@ -1,0 +1,23 @@
+package myshop.data;
+
+import java.sql.Timestamp;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name="myshop") //자동으로 myshop table이 mysql에 만들어진다,같은 이름의 테이블이 존재하는경우에 덮어씌운다.
+public class MyShopDto {
+	
+	@Id
+	private long num;
+	private String sangname;
+	private String sangprice;
+	private String sangcolor;
+	private String sangipgo;
+	private Timestamp writeday;
+	
+}
