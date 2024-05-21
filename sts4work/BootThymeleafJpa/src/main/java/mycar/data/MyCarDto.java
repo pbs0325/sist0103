@@ -30,7 +30,7 @@ public class MyCarDto {
 	private String carname;
 	
 	@Column
-	private String carprice;
+	private int carprice;
 	
 	@Column(length=20)
 	private String carcolor;
